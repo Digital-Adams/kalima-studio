@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+
+
+@layer base {
+  * {
+    border-color: var(--border, rgba(148, 163, 184, 0.15));
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #0a0a0a;
+    color: #e5e5e5;
+  }
+
+  html.light body {
+    background-color: #f5f5f5;
+    color: #171717;
+    color-scheme: light;
+  }
+}
+
+/* Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(150, 150, 150, 0.45);
+}
